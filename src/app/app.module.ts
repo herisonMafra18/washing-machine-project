@@ -11,6 +11,7 @@ import { SharedModule } from './shared/shared.module';
 import { registerLocaleData } from '@angular/common';
 import localePt from '@angular/common/locales/pt';
 import { ScheduleComponent } from './features/schedule/components/schedule/schedule.component';
+import { PageScheduleComponent } from './features/schedule/page/page-schedule/page-schedule.component';
 registerLocaleData(localePt);
 
 
@@ -18,6 +19,7 @@ registerLocaleData(localePt);
   declarations: [
     AppComponent,
     ScheduleComponent,
+    PageScheduleComponent,
     ],
   imports: [
     BrowserModule,
