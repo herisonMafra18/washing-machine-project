@@ -1,0 +1,22 @@
+<div class=bloco *ngIf="costumers">
+    
+    <p>Identificador</p>
+    <div class="ident">
+        {{costumers?.id}}
+    </div>
+        <div class="descricao">
+        <p>Nome: {{costumers?.name}}</p>
+        <p>Apartamento: {{costumers?.apartment}}</p>
+        <p>Bloco: {{costumers?.block}}</p>
+    </div>
+    <button  class="morador">
+    <div (click)="removeToCostumer()">
+        Remover morador
+    </div>
+    <br>
+    <div (click)="productDetails(costumers.id)">
+        Detalhes de morador
+    </div>
+    </button>
+    <button class="completed" (click)="bottonCheck()"> Checado {{costumers?.check}} </button>
+</div>

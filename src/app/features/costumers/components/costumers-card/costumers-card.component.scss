@@ -1,0 +1,52 @@
+.bloco {
+    max-width: 250px;
+    height: 200px;
+    width: 250px;
+    justify-content: space-between;
+    flex-direction: column;
+    flex: 1;
+    text-align: center;
+    border-radius: 5px 5px;
+    margin: 80px;
+    box-sizing: border-box;
+    border: solid;
+    display: table-cell;
+    vertical-align: middle;
+    
+    
+}
+
+.ident {
+    font-size: 60px;
+}
+
+.descricao {
+    font-size: 20px;
+}
+
+.morador {
+    font-size: 20px;
+    text-align: center;
+    border: solid;
+    padding: 5px;
+    vertical-align: middle;
+    width: 120px;
+    margin: 5px 25px;
+    background-color: rgb(238, 67, 25);
+    border-color: white;
+    cursor: pointer;
+    
+}
+
+.completed {
+    text-align: center;
+    border: solid;
+    padding: 5px;
+    vertical-align: middle;
+    width: 120px;
+    margin: 5px;
+    background-color: rgb(238, 67, 25);
+    border-color: white;
+    cursor: pointer;
+
+}

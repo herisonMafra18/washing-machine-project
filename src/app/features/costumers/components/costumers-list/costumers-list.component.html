@@ -1,0 +1,11 @@
+<div class="search">
+    <h3>Encontre produtos</h3>
+    <input type="text" placeholder="Digite o que procura" (keyup)="filterCostumer($event)" >
+    <br><br>
+
+    <div>
+        <h3> Lista de clientes:</h3>
+                
+        <app-costumers-card *ngFor="let client of costumerFilter" [costumers]="client"></app-costumers-card>
+
+        </div>

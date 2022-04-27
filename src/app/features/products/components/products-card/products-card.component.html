@@ -1,0 +1,23 @@
+<div class="card" *ngIf="product">
+<img width="250px" height="250px"
+        [src]="product.img">
+    <div class="card-description">
+        <p><b>{{product.description}}</b></p>
+        <h3>{{product.price | currency: 'BRL' }}</h3>
+        <p><b>10x sem juros de R${{product.price}}</b></p>
+        <p><b>ou R${{product.price}} no boleto</b></p>
+        <p>Porcentagem de desconto: {{discountPercent}}</p>
+        <p>Data de entrada: {{product.inclusionDate | date: 'short' }}</p>
+        </div>
+    <h3 [ngClass]="{'visivel': product.quantily >= 3, 'nao-visivel': product.quantily <= 2}">
+        {{ product.quantily >= 3 ? 'Disponível' : 'Não Disponível' }}
+
+    </h3>
+    <div class="actions add-to-cart" (click)="addToCart()">
+        Adicionar ao carrinho
+    </div>
+    <div class="remove-card" (click)="removeProduct()">
+        Remover produto
+    </div>
+
+    
