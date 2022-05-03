@@ -32,7 +32,7 @@ export class PageLoginComponent implements OnInit {
       
       sessionStorage.setItem('costumer', JSON.stringify(costumer));
 
-      this.router.navigateByUrl('costumers');
+      this.router.navigateByUrl('agendamento');
     }
   }
 
