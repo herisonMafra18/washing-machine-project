@@ -5,6 +5,7 @@ import { CostumersCardComponent } from './components/costumers-card/costumers-ca
 import { PageCostumersComponent } from './pages/page-costumers/page-costumers.component';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { CostumersDetailsComponent } from './pages/page-costumers-details/costumers-details.component';
+import { ScheduleModule } from '../schedule/page/schedule/schedule.module';
 
 
 
@@ -17,7 +18,8 @@ import { CostumersDetailsComponent } from './pages/page-costumers-details/costum
   ],
   imports: [
     CommonModule,
-    SharedModule
+    SharedModule,
+    ScheduleModule
   ],
   exports: [
     CostumersListComponent,

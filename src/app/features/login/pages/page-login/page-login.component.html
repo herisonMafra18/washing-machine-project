@@ -22,7 +22,7 @@
                 </div>
 
                 <div class="container-login100-form-btn">
-                    <button class="login100-form-btn" type="button" (click)="authenticate()">Entrar</button>
+                    <button class="login100-form-btn" type="button" [disabled]="!email || !password" (click)="authenticate()">Entrar</button>
                 </div>
                 <P class="error" *ngIf="error">Usuario ou senha incorretos</P>
             </form>
