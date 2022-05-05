@@ -31,12 +31,12 @@ export class CostumersCardComponent implements OnInit {
     this.router.navigateByUrl(`/costumers-details/${id}`);
   }
 
-  bottonCheck () {
-    if (this.costumers) {
-      this.costumers.check = !this.costumers.check;
-    }
+  // bottonCheck () {
+    // if (this.costumers) {
+      // this.costumers.check = !this.costumers.check;
+    // }
     
   }
 
 
-}
+

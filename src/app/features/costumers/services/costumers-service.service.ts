@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { TestBed } from '@angular/core/testing';
 import { CostumersModel } from '../components/models/costumers-list.model';
+import * as moment from 'moment';
 
 @Injectable({
   providedIn: 'root'
@@ -13,7 +13,6 @@ export class CostumersService {
       name: 'Herison Mafra',
       apartment: 101,
       block: 'A',
-      check: true,
       email: 'herison@teste.com',
       password: '1234'
     },
@@ -22,7 +21,6 @@ export class CostumersService {
       name: 'Angela Busato',
       apartment: 203,
       block: 'B',
-      check: false,
       email: 'angela@teste.com',
       password: '1234'
     },
@@ -31,7 +29,6 @@ export class CostumersService {
       name: 'Paulo',
       apartment: 210,
       block: 'B',
-      check: true,
       email: 'paulo@teste.com',
       password: '1234'
     },
@@ -40,11 +37,22 @@ export class CostumersService {
       name: 'Mateus',
       apartment: 127,
       block: 'A',
-      check: false,
       email: 'mateus@teste.com',
       password: '1234'
     }
   ];
+
+  getDefaultCostumer(): CostumersModel {
+    const dateToday = moment().format('YYYY/MM/DD');
+    return {
+      id: this.generateId(),
+      name: '',
+      apartment: 0,
+      block: '',
+      email: '',
+      password: ''
+    }
+  }
 
   getAllCostumers() {
     return this.costumers;
@@ -56,6 +64,15 @@ export class CostumersService {
 
   getCostumersByEmailAndPassword(email: string | undefined, password: string | undefined) {
     return this.costumers.find((costumers) => costumers.email === email && costumers.password === password);
+  }
+
+  generateId(): number {
+    return this.costumers[(this.costumers.length - 1)].id + 1;
+  }
+
+  createCostumer(costumer: CostumersModel) {
+    this.costumers.push(costumer);
+    return this.costumers;
   }
 
   constructor() { }

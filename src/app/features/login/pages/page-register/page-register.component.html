@@ -10,31 +10,37 @@
 					<img src="http://clipart.coolclips.com/480/vectors/tf05163/CoolClips_vc009621.png" alt="IMG">
 				</div>
 
-				<form class="forms">
+                <form #costumerForm="ngForm" class="forms">
 					<div class="wrap-input100 validate-input">
-                        <input class="input100" type="text" name="name" placeholder="Nome">
+                        <input ngModel class="input100" type="text" name="name" placeholder="Nome" required>
                     </div>
 
                     <div class="wrap-input100 validate-input">
-                        <input class="input100" type="text" name="apart" placeholder="Apartamento">
+                        <input ngModel class="input100" type="text" name="apart" placeholder="Apartamento" required>
                     </div>
 
                     <div class="wrap-input100 validate-input">
-                        <input class="input100" type="text" name="block" placeholder="Bloco">
+                        <select ngModel class="input100" name="block" placeholder="Bloco" required>
+                            <option value="" disabled selected>Selecione o bloco</option>
+                            <option>Bloco A</option>
+                            <option>Bloco B</option>
+                        </select>
                     </div>
 
                     <div class="wrap-input100 validate-input">
-                        <input class="input100" type="text" name="email" placeholder="Email">
+                        <input ngModel class="input100" type="text" name="email" placeholder="Email" required>
                     </div>
 
                     <div class="wrap-input100 validate-input">
-                        <input class="input100" type="password" name="pass" placeholder="Senha">
+                        <input ngModel class="input100" type="password" name="pass" placeholder="Senha" required>
                     </div>
 
                     <div class="container-login100-form-btn">
-						<button class="login100-form-btn">
-							Cadastrar
-						</button>
+						<button
+                        class="login100-form-btn"
+                        type="submit"
+                        [disabled]="costumerForm.invalid"
+                        (click)="onSubmit(costumerForm)">Cadastrar</button>
 					</div>
 				</form>
 			</div>

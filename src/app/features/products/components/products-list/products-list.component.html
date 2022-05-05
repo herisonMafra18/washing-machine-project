@@ -1,19 +1,17 @@
-<div class="limiter">
 <div class="container-login100">
-<div class="search">
-    <h3>Encontre produtos</h3>
-    <input type="text" placeholder="Digite o que procura" (keyup)="filterProduct($event)">
-    <br><br>
+    <app-header></app-header>
+    <div class="wrap-login100">
+        <div class="search">
+            <input type="text" placeholder="Digite o que procura" (keyup)="filterProduct($event)">
+            <br><br>
 
-    <app-products-card *ngFor="let item of filterProducts" [product]="item" [discountPercent]="3"></app-products-card>
+            <app-products-card *ngFor="let item of filterProducts" [product]="item" [discountPercent]="3">
+            </app-products-card>
 
-    <div [ngClass]="{ 'color-erro' : messageErro}" *ngIf="messageErro">
-        <h2>Produtos não encontrados!</h2>
+            <div [ngClass]="{ 'color-erro' : messageErro}" *ngIf="messageErro">
+                <h2>Produtos não encontrados!</h2>
+            </div>
+        </div>
+        <app-footer></app-footer>
     </div>
 </div>
-</div>
-</div>
-
-    
-
-    

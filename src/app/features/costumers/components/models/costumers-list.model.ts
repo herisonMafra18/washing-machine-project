@@ -3,7 +3,6 @@ export interface CostumersModel {
     name: string;
     apartment: number;
     block: string;
-    check: boolean;
     email: string;
     password?: string;
 }

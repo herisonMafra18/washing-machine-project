@@ -1,10 +1,9 @@
 <nav>
     <ul>
-        <li (click)="navigateByUrl('/products')" *ngIf="costumer">Produtos</li>
-        <li (click)="navigateByUrl('/agendamento')" *ngIf="costumer">Agendamento</li>
-        <li (click)="navigateByUrl('/home')" *ngIf="!costumer">Login</li>
-        <li (click)="navigateByUrl('/register')" *ngIf="!costumer">Cadastro</li>
-        <li (click)="navigateByUrl('/home')" *ngIf="costumer" (click)="exit()">Sair</li>
+        <li class="button1" (click)="navigateByUrl('/products')" *ngIf="costumer">Produtos</li>
+        <li class="button1" (click)="navigateByUrl('/agendamento')" *ngIf="costumer">Agendamento</li>
+        
+        <li class="button1" (click)="navigateByUrl('/home')" *ngIf="costumer" (click)="exit()">Sair</li>
         
     </ul>
 </nav>
