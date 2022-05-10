@@ -1,42 +1,8 @@
-<div class="limiter">
-	<div class="container-login100">
-		<app-header></app-header>
-		<div class="wrap-login100">
-			
-			<div class="login100-pic" data-tilt>
-
-				<div class="title">Seus agendamentos</div>
-
-				<p> {{ costumers?.name }} nesse texto tem que entrar as informações do ultimo agendamento, nesse texto tem que entrar as
-					informações do ultimo agendamento, nesse texto tem que entrar as informações do ultimo agendamento,
-				</p>
-				<br>
-
-			</div>
-
-			<form class="forms">
-
-				<div class="title">Agende uma nova data!</div>
-
-				<main>
-				<div for="date">Escolha uma data:</div>
-				<input class="dateSchedule" type="date" name="dateSchedule">
-
-				<div for="time">Horário:</div>
-				<input class="timeSchedule" type="time" name="timeSchedule">
-
-				<div class="container-login100-form-btn">
-					<button class="login100-form-btn">
-						Agendar
-					</button>
-				</div>
-			</main>
-
-			</form>
-
-		</div>
-
-	</div>
-
+<div class="title" *ngIf="schedule">
+	• {{ schedule.date }} |
+	{{ schedule.time }}
+	<button class="login100-form-btn" type="button" (click)="removeDate()">		
+			Cancelar 
+	</button>
 </div>
-<app-footer></app-footer>
+<hr>

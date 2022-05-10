@@ -58,13 +58,29 @@ export class CostumersService {
     return this.costumers;
   }
 
+  getCostumersByEmailAndPassword(email: string | undefined, password: string | undefined) {
+    return this.costumers.find((costumers) => costumers.email === email && costumers.password === password);
+  }
+
   getById(id: number) {
   return this.costumers.find((costumers) => costumers.id == id);
   }
 
-  getCostumersByEmailAndPassword(email: string | undefined, password: string | undefined) {
-    return this.costumers.find((costumers) => costumers.email === email && costumers.password === password);
+  getCostumerByName(name: string) {
+    return this.costumers.find((costumer) => costumer.name === name);
   }
+
+  getCostumersByFilterName(name: string) {
+    return this.costumers.filter((costumer) => costumer.name.toUpperCase().search(name.toUpperCase()) > -1);
+  }
+
+  getStudentsByFilterId(id: number) {
+    const costumer = this.getById(Number(id));
+    if(!costumer) {
+      return [];
+    }
+    return [costumer];
+  }  
 
   generateId(): number {
     return this.costumers[(this.costumers.length - 1)].id + 1;

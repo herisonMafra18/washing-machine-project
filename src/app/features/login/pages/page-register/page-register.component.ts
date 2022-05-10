@@ -23,18 +23,15 @@ export class PageRegisterComponent implements OnInit {
 
   onSubmit(costumerForm: NgForm) {
     console.log(costumerForm.value);
-    
-    const formValue = costumerForm.value;
-    
+    const formValue = costumerForm.value;    
     this.costumer.name = formValue.name;
-    this.costumer.apartment = formValue.apartment;
+    this.costumer.apartment = formValue.apart;
     this.costumer.block = formValue.block;
     this.costumer.email = formValue.email;
-    this.costumer.password = formValue.password;
+    this.costumer.password = formValue.pass;
     this.costumerService.createCostumer(this.costumer);
     alert ('Morador adicionado com sucesso!');
     this.router.navigateByUrl('/login');
-
   }
 
 

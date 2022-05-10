@@ -1,4 +1,6 @@
 export interface ScheduleModel {
-    date: number;
-    time: number;
+    date: string,
+    time: string,
+    
+    
 }

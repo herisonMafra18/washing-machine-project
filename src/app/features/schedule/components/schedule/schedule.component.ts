@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-import { CostumersModel } from 'src/app/features/costumers/components/models/costumers-list.model';
-import { CostumersService } from 'src/app/features/costumers/services/costumers-service.service';
+import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { ScheduleModel } from '../models/schedule.model';
+import { ScheduleService } from '../../services/schedule.service';
+
 
 @Component({
   selector: 'app-schedule',
@@ -10,14 +11,23 @@ import { CostumersService } from 'src/app/features/costumers/services/costumers-
 })
 export class ScheduleComponent implements OnInit {
 
-  constructor(
-    private activedRoute: ActivatedRoute,
-    private costumerService: CostumersService
+  
+  @Input()
+  schedule?: ScheduleModel;
+  
+  
+    constructor(   
+    private router: Router,
+    private scheduleService: ScheduleService
   ) { }
 
-  costumers?: CostumersModel;
+  
 
   ngOnInit(): void {
   }
 
+
+  removeDate() {
+    if(this.schedule) this.scheduleService.removeByDate(this.schedule.date);
+  }
 }

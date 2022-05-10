@@ -1,1 +1,27 @@
-<app-schedule></app-schedule>
+<div class="limiter">
+	<div class="container-login100">
+		<app-header></app-header>
+		<div class="wrap-login100">
+			<div class="login100-pic" data-tilt>
+				<div class="title">Seus agendamentos</div>
+				<p>
+					<app-schedule-list></app-schedule-list>
+				</p>
+			</div>
+			<form #scheduleForm="ngForm" class="forms">
+				<div class="title">Agende uma nova data!</div>
+				<main>
+					<div for="date">Escolha uma data:</div>
+					<input class="dateSchedule" type="date" name="dateSchedule" required>
+					<div for="time">Horário:</div>
+					<input class="timeSchedule" type="time" name="timeSchedule" required>
+					<div class="container-login100-form-btn">
+						<button class="login100-form-btn" type="button" [disabled]="scheduleForm.invalid"
+							(click)="onSubmit(scheduleForm)">Agendar</button>
+					</div>
+				</main>
+			</form>
+		</div>
+	</div>
+</div>
+<app-footer></app-footer>

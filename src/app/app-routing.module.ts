@@ -19,6 +19,7 @@ const routes: Routes = [
   { path: 'agendamento', component: PageScheduleComponent, canActivate: [AuthGuard]},
   { path: 'costumers', component: PageCostumersComponent, canActivate: [AuthGuard]},
   { path: 'costumers-details/:id', component: CostumersDetailsComponent, canActivate: [AuthGuard]},
+  { path: 'schedule', loadChildren: () => import('./features/schedule/schedule.module').then(m => m.ScheduleModule) },
   
 ];
 

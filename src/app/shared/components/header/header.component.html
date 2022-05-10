@@ -3,7 +3,7 @@
         <li class="button1" (click)="navigateByUrl('/products')" *ngIf="costumer">Produtos</li>
         <li class="button1" (click)="navigateByUrl('/agendamento')" *ngIf="costumer">Agendamento</li>
         
-        <li class="button1" (click)="navigateByUrl('/home')" *ngIf="costumer" (click)="exit()">Sair</li>
+        <li class="button1" *ngIf="costumer" (click)="exit()">Sair</li>
         
     </ul>
 </nav>
